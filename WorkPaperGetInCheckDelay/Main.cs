@@ -260,7 +260,8 @@ namespace WorkPaperGetInCheckDelay
                                     "料號：" + row["partnum"].ToString().Trim() + "<br/>" +
                                     "前處理結束時間：" + row["endtime"].ToString() + "<br/>" +
                                     "防焊油墨顏色：" + LsmColor + "<br/>" +
-                                    "已逾時時間：" + Convert.ToString(Convert.ToInt32(Minute)) + " 分<br/><br/>" +
+                                    "已逾時時間：" + Convert.ToString(Convert.ToInt32(Minute)) + " 分<br/>" +
+                                    "警報解除人員：" + EmpId + " " + EmpName + "<br/><br/>" +
                                     "-----此封郵件由系統所寄出，請勿直接回覆！-----");
                                     AlarmSound.Stop();
                                     AlarmSound.Dispose();
