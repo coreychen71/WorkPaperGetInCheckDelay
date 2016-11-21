@@ -248,8 +248,8 @@ namespace WorkPaperGetInCheckDelay
                                         row["lotnum"].ToString().Trim(),
                                         row["partnum"].ToString().Trim(),
                                         row["workqnty"].ToString().Trim(), "LF", "前處理",
-                                        row["endtime"].ToString(), "印刷機",
-                                        Convert.ToString(Convert.ToInt32(Minute)), 
+                                        Convert.ToDateTime(row["endtime"]).ToString("yyyy-MM-dd HH:mm:ss"), "印刷機",
+                                        Convert.ToString(Convert.ToInt32(Minute)),
                                         EmpId, EmpName, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                                     SendMail(
                                     "sm4@ewpcb.com.tw",
