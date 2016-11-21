@@ -206,6 +206,7 @@ namespace WorkPaperGetInCheckDelay
             {
                 foreach (DataRow row in srcData.Rows)
                 {
+                    Repeat:
                     //標準油墨可停留時間30分
                     var StandardMinute = 30;
                     var LsmColor = GetLsmColor(row["partnum"].ToString().Trim());
@@ -225,7 +226,6 @@ namespace WorkPaperGetInCheckDelay
                         AlarmSound.PlayLooping();
                         lblLastLotNum.Text = row["lotnum"].ToString().Trim();
                         lblLastPartNum.Text = row["partnum"].ToString().Trim();
-                        Repeat:
                         if (MessageBox.Show("注意！下述工單已從防焊前處理出站逾" +
                             Convert.ToString(Convert.ToInt32(Minute)) + "分鐘，請盡速安排上線生產！" + Environment.NewLine +
                             "Warning！The information following already overtime " +
@@ -245,9 +245,12 @@ namespace WorkPaperGetInCheckDelay
                                 if (EmpName != string.Empty)
                                 {
                                     InsertDissolutionLog(
-                                        "LXXXXXXXXX", "AXX-XXXX-XX", "1000", "LF", "前處理",
-                                        DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), "印刷機",
-                                        "60", EmpId, EmpName, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+                                        row["lotnum"].ToString().Trim(),
+                                        row["partnum"].ToString().Trim(),
+                                        row["workqnty"].ToString().Trim(), "LF", "前處理",
+                                        row["endtime"].ToString(), "印刷機",
+                                        Convert.ToString(Convert.ToInt32(Minute)), 
+                                        EmpId, EmpName, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                                     SendMail(
                                     "sm4@ewpcb.com.tw",
                                     "Ewproject System",
