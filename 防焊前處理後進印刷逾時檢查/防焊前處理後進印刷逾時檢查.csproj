@@ -7,8 +7,8 @@
     <ProjectGuid>{BA0EAB83-0875-4F23-BFD7-4E8B919D2F24}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WorkPaperGetInCheckDelay</RootNamespace>
-    <AssemblyName>WorkPaperGetInCheckDelay</AssemblyName>
+    <RootNamespace>防焊前處理後進印刷逾時檢查</RootNamespace>
+    <AssemblyName>防焊前處理後進印刷逾時檢查</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -75,6 +75,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

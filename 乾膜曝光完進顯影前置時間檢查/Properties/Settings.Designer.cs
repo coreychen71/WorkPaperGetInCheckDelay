@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WorkPaperGetInCheckDelay.Properties
+namespace 乾膜曝光完進顯影前置時間檢查.Properties
 {
 
 
